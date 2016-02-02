@@ -16,6 +16,10 @@
 
     <tr><td class="columnOfCards" id="c0">
         <table>
+            <tr><td>
+                <input size="1" maxlength="1" text" id="to_col_from_0"  />
+                <button id="moveButtoncol0">Move</button>
+            </td></tr>
             <tr><td class="cardLocation l0"></td></tr>
             <tr><td class="cardLocation l1"></td></tr>
             <tr><td class="cardLocation l2"></td></tr>
@@ -34,6 +38,10 @@
     </td>
         <td class="columnOfCards" id="c1">
             <table>
+                <tr><td>
+                    <input size="1" maxlength="1" text" id="to_col_from_1"  />
+                    <button id="moveButtoncol1">Move</button>
+                </td></tr>
                 <tr><td class="cardLocation l0"></td></tr>
                 <tr><td class="cardLocation l1"></td></tr>
                 <tr><td class="cardLocation l2"></td></tr>
@@ -175,6 +183,37 @@ $("#Remove4").click(function(){
 $("#moveButton").click(function(){
 var colFrom = $("#from_col").val();
 var colTo = $("#to_col").val();
+$.ajax({
+  type: "POST",
+  url: "/moveCard/"+colFrom+"/"+colTo,
+  data: JSON.stringify(game),
+  success: function(data, status){console.log("Data: " + data + "\nStatus: " + status);
+        game = data;
+        display(data);},
+  contentType:"application/json; charset=utf-8",
+  dataType:"json",
+});
+});
+
+
+$("#moveButtoncol0").click(function(){
+var colFrom = $("0").val();
+var colTo = $("#to_col_from_0").val();
+$.ajax({
+  type: "POST",
+  url: "/moveCard/"+colFrom+"/"+colTo,
+  data: JSON.stringify(game),
+  success: function(data, status){console.log("Data: " + data + "\nStatus: " + status);
+        game = data;
+        display(data);},
+  contentType:"application/json; charset=utf-8",
+  dataType:"json",
+});
+});
+
+$("#moveButtoncol1").click(function(){
+var colFrom = $("1").val();
+var colTo = $("#to_col_from_1").val();
 $.ajax({
   type: "POST",
   url: "/moveCard/"+colFrom+"/"+colTo,
