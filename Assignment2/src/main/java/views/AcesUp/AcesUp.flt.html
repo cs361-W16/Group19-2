@@ -17,7 +17,7 @@
     <tr><td class="columnOfCards" id="c0">
         <table>
             <tr><td>
-                <input size="1" maxlength="1" text" id="to_col_from_0"  />
+                <input size="1" maxlength="1" type="text" id="to_col_from_0"  />
                 <button id="moveButtoncol0">Move</button>
             </td></tr>
             <tr><td class="cardLocation l0"></td></tr>
@@ -39,8 +39,8 @@
         <td class="columnOfCards" id="c1">
             <table>
                 <tr><td>
-                    <input size="1" maxlength="1" text" id="to_col_from_1"  />
-                    <button id="moveButtoncol1">Move</button>
+                    <input size="1" maxlength="1" type="text" id="to_col_from_1"  />
+                    <button id="moveButtonCol1">Move</button>
                 </td></tr>
                 <tr><td class="cardLocation l0"></td></tr>
                 <tr><td class="cardLocation l1"></td></tr>
@@ -60,6 +60,10 @@
         </td>
         <td class="columnOfCards" id="c2">
             <table>
+                <tr><td>
+                    <input size="1" maxlength="1" type="text" id="to_col_from_2"  />
+                    <button id="moveButtonCol2">Move</button>
+                </td></tr>
                 <tr><td class="cardLocation l0"></td></tr>
                 <tr><td class="cardLocation l1"></td></tr>
                 <tr><td class="cardLocation l2"></td></tr>
@@ -78,6 +82,10 @@
         </td>
         <td class="columnOfCards" id="c3">
             <table>
+                <tr><td>
+                    <input size="1" maxlength="1" type="text" id="to_col_from_3"  />
+                    <button id="moveButtonCol3">Move</button>
+                </td></tr>
                 <tr><td class="cardLocation l0"></td></tr>
                 <tr><td class="cardLocation l1"></td></tr>
                 <tr><td class="cardLocation l2"></td></tr>
@@ -197,7 +205,7 @@ $.ajax({
 
 
 $("#moveButtoncol0").click(function(){
-var colFrom = $("0").val();
+var colFrom = 0;
 var colTo = $("#to_col_from_0").val();
 $.ajax({
   type: "POST",
@@ -211,9 +219,39 @@ $.ajax({
 });
 });
 
-$("#moveButtoncol1").click(function(){
-var colFrom = $("1").val();
+$("#moveButtonCol1").click(function(){
+var colFrom = 1;
 var colTo = $("#to_col_from_1").val();
+$.ajax({
+  type: "POST",
+  url: "/moveCard/"+colFrom+"/"+colTo,
+  data: JSON.stringify(game),
+  success: function(data, status){console.log("Data: " + data + "\nStatus: " + status);
+        game = data;
+        display(data);},
+  contentType:"application/json; charset=utf-8",
+  dataType:"json",
+});
+});
+
+$("#moveButtonCol2").click(function(){
+var colFrom = 2;
+var colTo = $("#to_col_from_2").val();
+$.ajax({
+  type: "POST",
+  url: "/moveCard/"+colFrom+"/"+colTo,
+  data: JSON.stringify(game),
+  success: function(data, status){console.log("Data: " + data + "\nStatus: " + status);
+        game = data;
+        display(data);},
+  contentType:"application/json; charset=utf-8",
+  dataType:"json",
+});
+});
+
+$("#moveButtonCol3").click(function(){
+var colFrom = 3;
+var colTo = $("#to_col_from_3").val();
 $.ajax({
   type: "POST",
   url: "/moveCard/"+colFrom+"/"+colTo,
