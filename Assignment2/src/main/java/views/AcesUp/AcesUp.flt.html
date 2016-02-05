@@ -34,6 +34,7 @@
             <tr><td class="cardLocation l11"></td></tr>
             <tr><td class="cardLocation l12"></td></tr>
             <tr><td class="cardLocation l13"></td></tr>
+            <tr><td><button id="Remove1">Discard</td></tr>
         </table>
     </td>
         <td class="columnOfCards" id="c1">
@@ -56,6 +57,7 @@
                 <tr><td class="cardLocation l11"></td></tr>
                 <tr><td class="cardLocation l12"></td></tr>
                 <tr><td class="cardLocation l13"></td></tr>
+                <tr><td><button id="Remove2">Discard</td></tr>
             </table>
         </td>
         <td class="columnOfCards" id="c2">
@@ -78,6 +80,7 @@
                 <tr><td class="cardLocation l11"></td></tr>
                 <tr><td class="cardLocation l12"></td></tr>
                 <tr><td class="cardLocation l13"></td></tr>
+                <tr><td><button id="Remove3">Discard</td></tr>
             </table>
         </td>
         <td class="columnOfCards" id="c3">
@@ -100,13 +103,14 @@
                 <tr><td class="cardLocation l11"></td></tr>
                 <tr><td class="cardLocation l12"></td></tr>
                 <tr><td class="cardLocation l13"></td></tr>
+                <tr><td><button id="Remove4">Discard</td></tr>
             </table>
         </td>
     </tr>
 </table>
 
 <button id="dealButton">Deal</button>
-<BR>Remove from: <button id="Remove1">Column1</button><button id="Remove2">Column2</button><button id="Remove3">Column3</button><button id="Remove4">Column4</button>
+
 
 <br><button id="restartButton">Restart</button><br>
 
@@ -210,9 +214,10 @@ $.ajax({
 $("#moveButtoncol0").click(function(){
 var colFrom = 0;
 var colTo = $("#to_col_from_0").val();
+var numColTo = parseInt(colTo) - 1;
 $.ajax({
   type: "POST",
-  url: "/moveCard/"+colFrom+"/"+colTo,
+  url: "/moveCard/"+colFrom+"/"+numColTo,
   data: JSON.stringify(game),
   success: function(data, status){console.log("Data: " + data + "\nStatus: " + status);
         game = data;
@@ -220,14 +225,16 @@ $.ajax({
   contentType:"application/json; charset=utf-8",
   dataType:"json",
 });
+$("#to_col_from_0").val('');
 });
 
 $("#moveButtonCol1").click(function(){
 var colFrom = 1;
 var colTo = $("#to_col_from_1").val();
+var numColTo = parseInt(colTo) - 1;
 $.ajax({
   type: "POST",
-  url: "/moveCard/"+colFrom+"/"+colTo,
+  url: "/moveCard/"+colFrom+"/"+numColTo,
   data: JSON.stringify(game),
   success: function(data, status){console.log("Data: " + data + "\nStatus: " + status);
         game = data;
@@ -235,14 +242,16 @@ $.ajax({
   contentType:"application/json; charset=utf-8",
   dataType:"json",
 });
+$("#to_col_from_1").val('');
 });
 
 $("#moveButtonCol2").click(function(){
 var colFrom = 2;
 var colTo = $("#to_col_from_2").val();
+var numColTo = parseInt(colTo) - 1;
 $.ajax({
   type: "POST",
-  url: "/moveCard/"+colFrom+"/"+colTo,
+  url: "/moveCard/"+colFrom+"/"+numColTo,
   data: JSON.stringify(game),
   success: function(data, status){console.log("Data: " + data + "\nStatus: " + status);
         game = data;
@@ -250,14 +259,16 @@ $.ajax({
   contentType:"application/json; charset=utf-8",
   dataType:"json",
 });
+$("#to_col_from_2").val('');
 });
 
 $("#moveButtonCol3").click(function(){
 var colFrom = 3;
 var colTo = $("#to_col_from_3").val();
+var numColTo = parseInt(colTo) - 1;
 $.ajax({
   type: "POST",
-  url: "/moveCard/"+colFrom+"/"+colTo,
+  url: "/moveCard/"+colFrom+"/"+numColTo,
   data: JSON.stringify(game),
   success: function(data, status){console.log("Data: " + data + "\nStatus: " + status);
         game = data;
@@ -265,6 +276,7 @@ $.ajax({
   contentType:"application/json; charset=utf-8",
   dataType:"json",
 });
+$("#to_col_from_3").val('');
 });
 
 
