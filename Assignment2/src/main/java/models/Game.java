@@ -13,6 +13,7 @@ public class Game {
 
     public java.util.List<java.util.List<Card>> cols = new ArrayList<>();
 
+    public boolean error = false;
 
     public Game(){
         cols.add(new ArrayList<Card>());
@@ -73,6 +74,8 @@ public class Game {
             if (removeCard) {
                 this.cols.get(columnNumber).remove(this.cols.get(columnNumber).size() - 1);
             }
+            else
+                this.error = true;
         }
     }
 
@@ -87,11 +90,13 @@ public class Game {
         return this.cols.get(columnNumber).get(this.cols.get(columnNumber).size()-1);
     }
 
-
     public void move(int colFrom, int colTo) {
         Card cardToMove = getTopCard(colFrom);
-        this.removeCardFromCol(colFrom);
-        this.addCardToCol(colTo,cardToMove);
+        //boolean okayCol = colHasCards(colTo);
+        //if(!okayCol){
+            this.removeCardFromCol(colFrom);
+            this.addCardToCol(colTo, cardToMove);
+        //}
     }
 
     private void addCardToCol(int colTo, Card cardToMove) {
