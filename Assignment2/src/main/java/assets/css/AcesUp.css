@@ -16,3 +16,19 @@ font-weight: bold;
 width: 100px;
 background-color:#F0F0F0;
 }
+
+body{
+	margin: 5%;
+	text-align:center;
+}
+
+
+.restartButton{
+	text-align:center;
+
+}
+
+.dealButton{
+
+	text-align:center;
+}
