@@ -121,6 +121,10 @@ var game;
 function display(game) {
 console.log(game);
 
+    if(game.error == true){
+        alert("Invalid move. No. Stop. Pliss.");
+    }
+
 $( '.columnOfCards .cardLocation' ).html("");
 
     $.each(game.cols[0], function( key, val ) {
