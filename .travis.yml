@@ -3,13 +3,13 @@ sudo: false
 language: java
 
 jdk:
-	- oraclejdk8
-	- oraclejdk7
+  - oraclejdk8
+  - oraclejdk7
 
 install: mvn install -U -DskipTests=true
 
 script: mvn verify -U -Dmaven.javadoc.skip=true
 
 cache:
-	directories:
-	- $HOME/ .m2
+  directories:
+  - $HOME/ .m2
