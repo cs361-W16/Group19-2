@@ -15,6 +15,8 @@ public class Game {
 
     public boolean error = false;
 
+    public boolean isAmerican = true;
+
     public Game(){
         cols.add(new ArrayList<Card>());
         cols.add(new ArrayList<Card>());
@@ -23,11 +25,23 @@ public class Game {
     }
 
     public void buildDeck() {
-        for(int i = 2; i < 15; i++){
-            deck.add(new Card(i,Suit.Clubs));
-            deck.add(new Card(i,Suit.Hearts));
-            deck.add(new Card(i,Suit.Diamonds));
-            deck.add(new Card(i,Suit.Spades));
+        if (isAmerican == true)
+        {
+            for (int i = 2; i < 15; i++){
+                deck.add(new Card(i,Suit.Clubs));
+                deck.add(new Card(i,Suit.Hearts));
+                deck.add(new Card(i,Suit.Diamonds));
+                deck.add(new Card(i,Suit.Spades));
+            }
+        }
+        else if (isAmerican == false)
+        {
+            for (int i = 1; i < 11; i++){
+                deck.add(new Card(i,SpanishSuit.Coins));
+                deck.add(new Card(i,SpanishSuit.Cups));
+                deck.add(new Card(i,SpanishSuit.Swords));
+                deck.add(new Card(i,SpanishSUit.Clubs));
+            }
         }
     }
 
