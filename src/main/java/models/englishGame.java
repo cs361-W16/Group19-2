@@ -9,7 +9,17 @@ import java.util.Random;
  */
 public class englishGame extends Game {
 
-    public void buildDeck() {
+    public englishGame()
+    {
+        cols.add(new ArrayList<Card>());
+        cols.add(new ArrayList<Card>());
+        cols.add(new ArrayList<Card>());
+        cols.add(new ArrayList<Card>());
+        buildDeck();
+    }
+
+    public void buildDeck()
+    {
         for (int i = 2; i < 15; i++) {
             deck.add(new Card(i, Suit.Clubs));
             deck.add(new Card(i, Suit.Hearts));

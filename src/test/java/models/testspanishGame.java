@@ -12,13 +12,13 @@ import static org.junit.Assert.*;
 
 	@Test
 	public void  testSpanishGameCreation(){
-		Game s = new SpanishGame();
+		Game s = new spanishGame();
 		assertNotNull(s);
 	}
 
 	@Test
 		public void testSpanishDeckCount() {
-			Game s = new SpanishGame();
+			Game s = new spanishGame();
 			assertEquals(40,s.deck.size());
 			s.remove(2);
 			assertEquals(39,s.deck.size());

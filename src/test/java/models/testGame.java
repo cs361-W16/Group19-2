@@ -22,7 +22,7 @@ public class testGame {
         assertEquals(52,g.deck.size());
     }
 */
-    @Test
+ /*   @Test
     public void testGameInit(){
         Game g = new Game();
         g.buildDeck();
@@ -62,6 +62,6 @@ public class testGame {
         assertEquals(0,g.cols.get(2).size());
     }
 
-
+*/
 
 }

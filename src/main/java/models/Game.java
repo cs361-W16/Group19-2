@@ -7,7 +7,7 @@ import java.util.Random;
 /**
  * Created by michaelhilton on 1/25/16.
  */
-public class Game {
+public abstract class Game {
 
     public java.util.List<Card> deck = new ArrayList<>();
 
@@ -22,12 +22,13 @@ public class Game {
         cols.add(new ArrayList<Card>());
         cols.add(new ArrayList<Card>());
         cols.add(new ArrayList<Card>());
-	this.buildDeck();
 	}
 
 
+    public abstract void buildDeck();
 
-	public abstract void builDeck();		//make the class abstract - to be implemented in the child classes
+	/*public abstract void builDeck();		//make the class abstract - to be implemented in the child classes*/
+
 
 /*
     public void buildDeck() {
@@ -95,8 +96,8 @@ public class Game {
             if (removeCard) {
                 this.cols.get(columnNumber).remove(this.cols.get(columnNumber).size() - 1);
             }
-            else
-                this.error = true;
+            /*else
+                this.error = true;*/
         }
     }
 
