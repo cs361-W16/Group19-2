@@ -38,8 +38,13 @@ public class ApplicationController {
         return Results.html().template("views/AcesUp/AcesUp.flt.html");
     }
     
-    public Result gameGet(){
-        Game g = new Game();
+    public Result gameGet(Context context, @PathParam("deck") boolean deck){
+        Game g;
+        if (deck){
+          g = new englishGame();
+        } else{
+          g = new spanishGame();
+        }
         g.buildDeck();
         g.shuffle();
         g.dealFour();

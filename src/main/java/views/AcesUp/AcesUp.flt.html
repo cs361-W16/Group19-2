@@ -24,14 +24,20 @@
 </div>
 -->
 
+<!--
    <ul class="nav nav-pills">
  	 <li role="presentation" class="active"><a href="#">Home</a></li>
     	 <li role="presentation"><a href="#">Log In</a></li>
       	<li role="presentation"><a href="#">Help</a></li>
       </ul>
+-->
 
+<div class="well" id="deckChoice"> Choose a deck<br>
+<button type="button" class="btn btn-success" id="USdeck">US Deck</button>
+<button type="button" class="btn btn-success" id="SPdeck">Spanish Deck</button></div>
 
-<div class="well"> Welcome to Ace's Up. You can win 1/20 times if you play perfectly. Good Luck! </div>
+<div class="well"> Welcome to Ace's Up. You can win 1/20 times if you play
+  perfectly. Good Luck! </div>
 
 
 <table align="center">
@@ -207,6 +213,21 @@ $.ajax({
 });
 });
 
+$("#USdeck").click(function(){
+  $.getJSON("http://localhost:8080/game/true", function( data ) {
+    display(data);
+    game = data;
+  });
+  getElementById("deckChoice").innerHTML = "Using US Deck";
+});
+
+$("#SPdeck").click(function(){
+  $.getJSON("http://localhost:8080/game/false", function( data ) {
+    display(data);
+    game = data;
+  });
+  getElementById("deckChoice").innerHTML = "Using Spanish Deck";
+});
 
 function removeCard(colNumber){
 $.ajax({
