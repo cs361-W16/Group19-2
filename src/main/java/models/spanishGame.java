@@ -7,7 +7,7 @@ import java.util.Random;
 /**
  * Created by michaelhilton on 1/25/16.
  */
-public class spanishGame extends Game{
+public class spanishGame extends Game {
 
     public void buildDeck() {
         for (int i = 1; i < 11; ++i){
