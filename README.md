@@ -1,6 +1,7 @@
 # Group19-2
 
-This is our repository! Hello, World!
+This is our testing branch where we try to debug errors without breaking the
+main repo.
 
 Now with Travis CI.
 
