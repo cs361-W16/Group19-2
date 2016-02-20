@@ -27,7 +27,7 @@ public class Game {
 
 
 
-	public abstract void builDeck();		//make the class abstract - to be implemented in the child classes
+	public abstract void buildDeck();		//make the class abstract - to be implemented in the child classes
 
 /*
     public void buildDeck() {
