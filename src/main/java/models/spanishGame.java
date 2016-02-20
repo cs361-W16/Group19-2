@@ -18,3 +18,4 @@ public void buildDeck() {
 		deck.add(new Card(i,Suit.Coins));
 	}
 }
+}
