@@ -7,7 +7,7 @@ import java.util.Random;
 /**
  * Created by michaelhilton on 1/25/16.
  */
-public class englishGame extends Game{
+public class spanishGame extends Game{
 
 public void buildDeck() {
  
@@ -15,6 +15,6 @@ public void buildDeck() {
 		deck.add(new Card(i,Suit.Clubs));
 		deck.add(new Card(i,Suit.Cups));
 		deck.add(new Card(i,Suit.Swords));
-		deck.add(new Card(i,Suit.Clubs));
+		deck.add(new Card(i,Suit.Coins));
 	}
 }
