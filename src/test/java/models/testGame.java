@@ -9,19 +9,19 @@ import static org.junit.Assert.*;
  */
 public class testGame {
 
-    @Test
+ /*   @Test
     public void testGameCreation(){
         Game g = new Game();
         assertNotNull(g);
     }
 
-    @Test
+   @Test
     public void testGameBuildDeck(){
         Game g = new Game();
         g.buildDeck();
         assertEquals(52,g.deck.size());
     }
-
+*/
     @Test
     public void testGameInit(){
         Game g = new Game();
