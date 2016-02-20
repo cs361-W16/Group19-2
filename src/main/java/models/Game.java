@@ -7,13 +7,13 @@ import java.util.Random;
 /**
  * Created by michaelhilton on 1/25/16.
  */
-public class Game {
+public abstract class Game {
 
     public java.util.List<Card> deck = new ArrayList<>();
 
     public java.util.List<java.util.List<Card>> cols = new ArrayList<>();
 
-  //  public boolean error = false;
+    //public boolean error = false;
 
     //public boolean isAmerican = true;
 
@@ -27,7 +27,7 @@ public class Game {
 
 
 
-	public abstract void builDeck();		//make the class abstract - to be implemented in the child classes
+	public abstract void buildDeck();		//make the class abstract - to be implemented in the child classes
 
 /*
     public void buildDeck() {
@@ -95,8 +95,8 @@ public class Game {
             if (removeCard) {
                 this.cols.get(columnNumber).remove(this.cols.get(columnNumber).size() - 1);
             }
-            else
-                this.error = true;
+            //else
+            //    this.error = true;
         }
     }
 
