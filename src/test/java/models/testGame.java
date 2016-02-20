@@ -1,13 +1,13 @@
-package models;
+/*package models;
 
 import org.junit.Test;
 
-import static org.junit.Assert.*;
+import static org.junit.Assert.*;*/
 
 /**
  * Created by michaelhilton on 1/25/16.
  */
-public class testGame {
+/*public class testGame {
 
     @Test
     public void testGameCreation(){
@@ -72,4 +72,4 @@ public class testGame {
 
 
 
-}
+}*/
