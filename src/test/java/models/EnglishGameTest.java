@@ -4,29 +4,39 @@ import org.junit.Test;
 
 import static org.junit.Assert.*;
 
-/**
- * Created by michaelhilton on 1/25/16.
- */
-public class testGame {
 
- /*   @Test
-    public void testGameCreation(){
-        Game g = new Game();
-        assertNotNull(g);
+public class EnglishGameTest {
+
+    @Test
+    public void  testEnglishGameCreation(){
+        Game newGame = new englishGame();
+        assertNotNull(newGame);
     }
 
-   @Test
-    public void testGameBuildDeck(){
-        Game g = new Game();
+    @Test
+    public void testNumberCols(){
+        Game newGame = new englishGame();
+        assertEquals(newGame.cols.size(),4);
+    }
+
+    @Test
+    public void testGameShuffled(){
+        Game g = new englishGame();
         g.buildDeck();
-        assertEquals(52,g.deck.size());
+        g.shuffle();
+        assertNotEquals(2,g.deck.get(0).getValue());
     }
-*/
- /*
+
+    @Test
+    public void testEnglishGameBuildDeck(){
+        Game newGame = new englishGame();
+        newGame.buildDeck();
+        assertEquals(52,newGame.deck.size());
+    }
 
     @Test
     public void testGameStart(){
-        Game g = new Game();
+        Game g = new englishGame();
         g.buildDeck();
         g.shuffle();
         g.dealFour();
@@ -38,7 +48,7 @@ public class testGame {
 
     @Test
     public void testCustomDeal(){
-        Game g = new Game();
+        Game g = new englishGame();
         g.buildDeck();
         g.customDeal(0,3,6,9);
         assertEquals("2Clubs",g.cols.get(0).get(0).toString());
@@ -49,13 +59,11 @@ public class testGame {
 
     @Test
     public void testRemoveFunction(){
-        Game g = new Game();
+        Game g = new englishGame();
         g.buildDeck();
         g.customDeal(0,3,6,9);
         g.remove(2);
         assertEquals(0,g.cols.get(2).size());
     }
-
-*/
 
 }

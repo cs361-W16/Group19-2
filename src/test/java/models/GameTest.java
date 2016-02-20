@@ -7,7 +7,7 @@ import static org.junit.Assert.*;
 /**
  * Created by michaelhilton on 1/25/16.
  */
-public class testGame {
+public class GameTest {
 
  /*   @Test
     public void testGameCreation(){

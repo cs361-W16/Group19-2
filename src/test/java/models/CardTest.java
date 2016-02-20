@@ -7,7 +7,7 @@ import static org.junit.Assert.*;
 /**
  * Created by michaelhilton on 1/26/16.
  */
-public class testCard {
+public class CardTest {
     @Test
     public void testGetSuit(){
         Card c = new Card(5,Suit.Clubs);
