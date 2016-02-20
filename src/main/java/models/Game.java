@@ -13,17 +13,23 @@ public class Game {
 
     public java.util.List<java.util.List<Card>> cols = new ArrayList<>();
 
-    public boolean error = false;
+  //  public boolean error = false;
 
-    public boolean isAmerican = true;
+    //public boolean isAmerican = true;
 
     public Game(){
         cols.add(new ArrayList<Card>());
         cols.add(new ArrayList<Card>());
         cols.add(new ArrayList<Card>());
         cols.add(new ArrayList<Card>());
-    }
+	this.buildDeck();
+	}
 
+
+
+	public abstract void builDeck();		//make the class abstract - to be implemented in the child classes
+
+/*
     public void buildDeck() {
         if (isAmerican == true)
         {
@@ -44,6 +50,7 @@ public class Game {
             }
         }
     }
+*/
 
     public void shuffle() {
         long seed = System.nanoTime();
@@ -103,6 +110,8 @@ public class Game {
     private Card getTopCard(int columnNumber) {
         return this.cols.get(columnNumber).get(this.cols.get(columnNumber).size()-1);
     }
+
+
 
     public void move(int colFrom, int colTo) {
         Card cardToMove = getTopCard(colFrom);
