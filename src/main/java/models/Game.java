@@ -22,7 +22,7 @@ public abstract class Game {
         cols.add(new ArrayList<Card>());
         cols.add(new ArrayList<Card>());
         cols.add(new ArrayList<Card>());
-	this.buildDeck();
+	      this.buildDeck();
 	}
 
 
