@@ -1,0 +1,27 @@
+package models;
+
+import org.junit.Test;
+
+import static org.junit.Assert.*;
+
+/**
+ * Created by michaelhilton on 1/25/16.
+  */
+
+  public class SpanishGameTest {
+
+	@Test
+	public void  testSpanishGameCreation(){
+		Game s = new spanishGame();
+		assertNotNull(s);
+	}
+	/*
+	@Test
+		public void testSpanishDeckCount() {
+			Game s = new spanishGame();
+			assertEquals(40,s.deck.size());
+			s.remove(2);
+			assertEquals(39,s.deck.size());
+		}
+	*/
+  }
