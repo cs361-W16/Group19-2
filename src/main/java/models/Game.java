@@ -7,13 +7,13 @@ import java.util.Random;
 /**
  * Created by michaelhilton on 1/25/16.
  */
-public class Game {
+public abstract class Game {
 
     public java.util.List<Card> deck = new ArrayList<>();
 
     public java.util.List<java.util.List<Card>> cols = new ArrayList<>();
 
-  //  public boolean error = false;
+    //public boolean error = false;
 
     //public boolean isAmerican = true;
 
@@ -22,35 +22,11 @@ public class Game {
         cols.add(new ArrayList<Card>());
         cols.add(new ArrayList<Card>());
         cols.add(new ArrayList<Card>());
-	this.buildDeck();
-	}
+	      this.buildDeck();
+	  }
 
-
-
-	public abstract void builDeck();		//make the class abstract - to be implemented in the child classes
-
-/*
-    public void buildDeck() {
-        if (isAmerican == true)
-        {
-            for (int i = 2; i < 15; i++){
-                deck.add(new Card(i,Suit.Clubs));
-                deck.add(new Card(i,Suit.Hearts));
-                deck.add(new Card(i,Suit.Diamonds));
-                deck.add(new Card(i,Suit.Spades));
-            }
-        }
-        else if (isAmerican == false)
-        {
-            for (int i = 1; i < 11; i++){
-                deck.add(new Card(i.Suit.Coins));
-                deck.add(new Card(i.Suit.Cups));
-                deck.add(new Card(i.Suit.Swords));
-                deck.add(new Card(i.Suit.Clubs));
-            }
-        }
-    }
-*/
+    // Abstracting the build deck class
+	  public abstract void buildDeck();
 
     public void shuffle() {
         long seed = System.nanoTime();
@@ -95,8 +71,8 @@ public class Game {
             if (removeCard) {
                 this.cols.get(columnNumber).remove(this.cols.get(columnNumber).size() - 1);
             }
-            else
-                this.error = true;
+            /*else
+                this.error = true;*/
         }
     }
 
