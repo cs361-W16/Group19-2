@@ -25,7 +25,7 @@ public abstract class Game {
 	      this.buildDeck();
 	  }
 
-    // Abstracting the build deck class
+    // Abstracting the build deck function
 	  public abstract void buildDeck();
 
     public void shuffle() {
