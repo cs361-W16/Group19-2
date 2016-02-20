@@ -34,11 +34,34 @@ public class ApplicationController {
         return Results.html();
     }
 
+    public Result chooseGame(){
+        return Results.html().template("views/AcesUp/chooseGame.html");
+    }
+
     public Result acesUp() {
         return Results.html().template("views/AcesUp/AcesUp.flt.html");
     }
     
-    public Result gameGet(Context context, @PathParam("deck") boolean deck){
+    public Result acesUpSpanish(){
+        return Results.html().template("views/AcesUp/SpanishAcesUp.flt.html");
+    }
+
+    public Result gameGetEnglish(){
+        Game g = new englishGame();
+        g.shuffle();
+        g.dealFour();
+
+        return Results.json().render(g);
+    }
+
+    public Result gameGetSpanish(){
+        Game g = new spanishGame();
+        g.shuffle();
+        g.dealFour();
+
+        return Results.json().render(g);
+    }
+    /*public Result gameGet(Context context, @PathParam("deck") boolean deck){
         Game g;
         if (deck){
           g = new englishGame();
@@ -50,7 +73,7 @@ public class ApplicationController {
         g.dealFour();
 
         return Results.json().render(g);
-    }
+    }*/
 
     public Result dealPost(Context context, Game g) {
         if(context.getRequestPath().contains("deal")){
