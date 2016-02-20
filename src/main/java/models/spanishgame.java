@@ -9,7 +9,8 @@ import java.util.Random;
  */
 public class englishGame extends Game{
 
-
+public void buildDeck() {
+ 
 	for (int i = 1; i < 11; ++i){
 		deck.add(new Card(i,Suit.Clubs));
 		deck.add(new Card(i,Suit.Cups));
