@@ -52,6 +52,15 @@ public class spanishGameTest{
     }
 
     @Test
+    public void testMoveCard(){
+        Game g = new spanishGame();
+        g.buildDeck();
+        g.customDeal(0,1,2,3);
+        g.move(0,1);
+        assertEquals("1Clubs",g.cols.get(1).get(1).toString());
+    }
+
+    @Test
     public void testRemoveFunction(){
         Game g = new spanishGame();
         g.buildDeck();
