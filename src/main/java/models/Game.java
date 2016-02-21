@@ -15,47 +15,21 @@ public abstract class Game {
 
     public boolean error = false;
 
-    //public boolean isAmerican = true;
-
     public Game(){
         cols.add(new ArrayList<Card>());
         cols.add(new ArrayList<Card>());
         cols.add(new ArrayList<Card>());
         cols.add(new ArrayList<Card>());
-	this.buildDeck();
-	}
-
-
+	      this.buildDeck();
+	  }
 
 	public abstract void buildDeck();		//make the class abstract - to be implemented in the child classes
 
-/*
-    public void buildDeck() {
-        if (isAmerican == true)
-        {
-            for (int i = 2; i < 15; i++){
-                deck.add(new Card(i,Suit.Clubs));
-                deck.add(new Card(i,Suit.Hearts));
-                deck.add(new Card(i,Suit.Diamonds));
-                deck.add(new Card(i,Suit.Spades));
-            }
-        }
-        else if (isAmerican == false)
-        {
-            for (int i = 1; i < 11; i++){
-                deck.add(new Card(i.Suit.Coins));
-                deck.add(new Card(i.Suit.Cups));
-                deck.add(new Card(i.Suit.Swords));
-                deck.add(new Card(i.Suit.Clubs));
-            }
-        }
-    }
-*/
 
-    public void shuffle() {
-        long seed = System.nanoTime();
-        Collections.shuffle(deck, new Random(seed));
-    }
+  public void shuffle() {
+      long seed = System.nanoTime();
+      Collections.shuffle(deck, new Random(seed));
+  }
 
     public void dealFour() {
         for(int i = 0; i < 4; i++){
