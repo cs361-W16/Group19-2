@@ -38,12 +38,12 @@ public class ApplicationController {
         return Results.html().template("views/AcesUp/chooseGame.html");
     }
 
-    public Result acesUp() {
+    public Result AcesUp() {
         return Results.html().template("views/AcesUp/AcesUp.flt.html");
     }
     
-    public Result acesUpSpanish(){
-        return Results.html().template("views/AcesUp/SpanishAcesUp.flt.html");
+    public Result AcesUpSpanish(){
+        return Results.html().template("views/AcesUp/AcesUpSpanish.flt.html");
     }
 
     public Result gameGetEnglish(){
