@@ -69,8 +69,8 @@ public abstract class Game {
             if (removeCard) {
                 this.cols.get(columnNumber).remove(this.cols.get(columnNumber).size() - 1);
             }
-            else
-                this.error = true;
+   //         else
+   //             this.error = true;
         }
     }
 
