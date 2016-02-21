@@ -47,14 +47,14 @@ public class ApiControllerDocTesterTest extends NinjaDocTester {
         Response response = makeRequest(
                 Request.GET().url(
                         testServerUrl().path(URL_ACES_UP)));
-        assertThat(response.payload, containsString("Welcome to Ace's Up"));
+        assertThat(response.payload, containsString("Welcome to Ace's Up (US Deck)"));
     }
     @Test
     public void testSPAcesUp() {
         Response response = makeRequest(
                 Request.GET().url(
                         testServerUrl().path(URL_SP_ACES_UP)));
-        assertThat(response.payload, containsString("Welcome to Ace's Up"));
+        assertThat(response.payload, containsString("Welcome to Ace's Up (Spanish Deck)"));
     }
 
 }
