@@ -42,8 +42,8 @@ public class ApplicationController {
         return Results.html().template("views/AcesUp/AcesUp.flt.html");
     }
     
-    public Result AcesUpSpanish(){
-        return Results.html().template("views/AcesUp/AcesUpSpanish.flt.html");
+    public Result SpanishAcesUp(){
+        return Results.html().template("views/AcesUp/SpanishAcesUp.flt.html");
     }
 
     public Result gameGetEnglish(){
