@@ -4,16 +4,16 @@ import org.junit.Test;
 
 import static org.junit.Assert.*;
 
-public class testSpanishGame{
+public class spanishGameTest{
 
     @Test
-    public void  testSpanishGameCreation(){
+    public void  testspanishGameCreation(){
         Game s = new spanishGame();
         assertNotNull(s);
     }
 
     @Test
-    public void testSpanishDeckCount(){
+    public void testspanishDeckCount(){
         Game s = new spanishGame();
         s.buildDeck();
         assertEquals(40, s.deck.size()); 
