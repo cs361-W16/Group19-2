@@ -12,11 +12,10 @@ public class spanishGameTest{
         assertNotNull(s);
     }
 
-/*    @Test
+    @Test
     public void testspanishDeckCount(){
         Game s = new spanishGame();
-        s.buildDeck();
         assertEquals(40, s.deck.size()); 
     }
-*/
+
 }
