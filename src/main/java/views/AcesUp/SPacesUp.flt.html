@@ -39,9 +39,6 @@
             <tr><td class="cardLocation l8"></td></tr>
             <tr><td class="cardLocation l9"></td></tr>
             <tr><td class="cardLocation l10"></td></tr>
-            <tr><td class="cardLocation l11"></td></tr>
-            <tr><td class="cardLocation l12"></td></tr>
-            <tr><td class="cardLocation l13"></td></tr>
             <tr><td><button type="button" class="btn btn-success" id="Remove1">Discard</button></td></tr>
         </table>
     </td>
@@ -63,9 +60,6 @@
                 <tr><td class="cardLocation l8"></td></tr>
                 <tr><td class="cardLocation l9"></td></tr>
                 <tr><td class="cardLocation l10"></td></tr>
-                <tr><td class="cardLocation l11"></td></tr>
-                <tr><td class="cardLocation l12"></td></tr>
-                <tr><td class="cardLocation l13"></td></tr>
                 <tr><td><button type="button" class="btn btn-success" id="Remove2">Discard</button></td></tr>
             </table>
         </td>
@@ -87,9 +81,6 @@
                 <tr><td class="cardLocation l8"></td></tr>
                 <tr><td class="cardLocation l9"></td></tr>
                 <tr><td class="cardLocation l10"></td></tr>
-                <tr><td class="cardLocation l11"></td></tr>
-                <tr><td class="cardLocation l12"></td></tr>
-                <tr><td class="cardLocation l13"></td></tr>
 		<tr><td><button type="button" class="btn btn-success" id="Remove3">Discard</button></td></tr>
             </table>
         </td>
@@ -110,9 +101,6 @@
                 <tr><td class="cardLocation l8"></td></tr>
                 <tr><td class="cardLocation l9"></td></tr>
                 <tr><td class="cardLocation l10"></td></tr>
-                <tr><td class="cardLocation l11"></td></tr>
-                <tr><td class="cardLocation l12"></td></tr>
-                <tr><td class="cardLocation l13"></td></tr>
                 <tr><td><button type="button" class="btn btn-success" id="Remove4">Discard</button></td></tr>
             </table>
         </td>
@@ -125,8 +113,7 @@
 
 <button type="button" class="btn btn-danger" id="restartButton">Restart</button>
 
-<button type="button" class="btn btn-warning" id="spButton">Play Spanish Deck</button>
-
+<button type="button" class="btn btn-warning" id="usButton">Play US Deck</button>
 <br>
 <br>
 <div class="jumbotron">
@@ -167,7 +154,7 @@ $( '.columnOfCards .cardLocation' ).html("");
 
 }
 
-$.getJSON("http://localhost:8080/game", function( data ) {
+$.getJSON("http://localhost:8080/SPgame", function( data ) {
 display(data);
 game = data;
 });
@@ -176,7 +163,7 @@ game = data;
 $("#dealButton").click(function(){
 $.ajax({
   type: "POST",
-  url: "/dealGame",
+  url: "/SPdealGame",
   data: JSON.stringify(game),
   success: function(data, status){console.log("Data: " + data + "\nStatus: " + status);
         game = data;
@@ -186,11 +173,10 @@ $.ajax({
 });
 });
 
-
 function removeCard(colNumber){
 $.ajax({
 type: "POST",
-url: "/removeCard/"+colNumber,
+url: "/SPremoveCard/"+colNumber,
 data: JSON.stringify(game),
 success: function(data, status){console.log("Data: " + data + "\nStatus: " + status);
 game = data;
@@ -221,7 +207,7 @@ var colFrom = $("#from_col").val();
 var colTo = $("#to_col").val();
 $.ajax({
   type: "POST",
-  url: "/moveCard/"+colFrom+"/"+colTo,
+  url: "/SPmoveCard/"+colFrom+"/"+colTo,
   data: JSON.stringify(game),
   success: function(data, status){console.log("Data: " + data + "\nStatus: " + status);
         game = data;
@@ -231,12 +217,12 @@ $.ajax({
 });
 });
 
- $("#restartButton").click(function(){
-   location.reload();
- });
+$("#restartButton").click(function(){
+  location.reload();
+});
 
-$("#spButton").click(function(){
-  window.open("SPacesUp", "_parent");
+$("#usButton").click(function(){
+  window.open("acesUp", "_parent");
 });
 
 $("#moveButtoncol0").click(function(){
@@ -245,7 +231,7 @@ var colTo = $("#to_col_from_0").val();
 var numColTo = parseInt(colTo) - 1;
 $.ajax({
   type: "POST",
-  url: "/moveCard/"+colFrom+"/"+numColTo,
+  url: "/SPmoveCard/"+colFrom+"/"+numColTo,
   data: JSON.stringify(game),
   success: function(data, status){console.log("Data: " + data + "\nStatus: " + status);
         game = data;
@@ -262,7 +248,7 @@ var colTo = $("#to_col_from_1").val();
 var numColTo = parseInt(colTo) - 1;
 $.ajax({
   type: "POST",
-  url: "/moveCard/"+colFrom+"/"+numColTo,
+  url: "/SPmoveCard/"+colFrom+"/"+numColTo,
   data: JSON.stringify(game),
   success: function(data, status){console.log("Data: " + data + "\nStatus: " + status);
         game = data;
@@ -279,7 +265,7 @@ var colTo = $("#to_col_from_2").val();
 var numColTo = parseInt(colTo) - 1;
 $.ajax({
   type: "POST",
-  url: "/moveCard/"+colFrom+"/"+numColTo,
+  url: "/SPmoveCard/"+colFrom+"/"+numColTo,
   data: JSON.stringify(game),
   success: function(data, status){console.log("Data: " + data + "\nStatus: " + status);
         game = data;
@@ -296,7 +282,7 @@ var colTo = $("#to_col_from_3").val();
 var numColTo = parseInt(colTo) - 1;
 $.ajax({
   type: "POST",
-  url: "/moveCard/"+colFrom+"/"+numColTo,
+  url: "/SPmoveCard/"+colFrom+"/"+numColTo,
   data: JSON.stringify(game),
   success: function(data, status){console.log("Data: " + data + "\nStatus: " + status);
         game = data;
