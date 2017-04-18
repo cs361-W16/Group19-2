@@ -49,6 +49,16 @@ public class englishGameTest{
         assertEquals("5Clubs",g.cols.get(3).get(0).toString());
     }
 
+
+    @Test
+    public void testMoveCard(){
+        Game g = new englishGame();
+        g.buildDeck();
+        g.customDeal(0,1,2,3);
+        g.move(0,1);
+        assertEquals("2Clubs",g.cols.get(1).get(1).toString());
+    }
+
     @Test
     public void testRemoveFunction(){
         Game g = new englishGame();
